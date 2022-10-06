@@ -4,7 +4,7 @@
     --color-grey-1: #E6E6E6;
 
 
-    --font-poppins: 'Poppins', sans-serif; 
+    --font-family-poppins: 'Poppins', sans-serif; 
 
     --font-weight-regual: 400;
     --font-weight-medium: 500;
@@ -16,7 +16,7 @@
 /* general */
 
 body {
-    font-family: var(--font-poppins);
+    font-family: var(--font-family-poppins);
 }
 
 .site-margin {
@@ -29,6 +29,8 @@ body {
     padding: 1rem 3rem;
     border: none;
     font-size: 0.8rem;
+    transition: 0.2s ease-in-out;
+    background-color: white;
 }
     .button-theme::before {
         content: '';
@@ -39,6 +41,7 @@ body {
         border-bottom: 3px solid white;
         right: 8px;
         bottom: 8px;
+        transition: 0.5s linear;
     }
     .button-theme::after {
         content: '';
@@ -49,7 +52,34 @@ body {
         border-left: 3px solid white;
         top: 8px;
         left: 8px;
+        transition: 0.5s linear;
     }
+    .button-theme:hover::after{
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
+    }
+    .button-theme:hover::before{
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
+    }
+    .icon-links{
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgb(183, 183, 183);
+        transition: 0.3s ease-in-out;
+    }
+        .icon-links:hover {
+            scale: 1.4;
+            background-color: black;
+            color: white;
+        }
 
 
 /* Header */
@@ -79,7 +109,7 @@ body {
             display: flex;
             gap: 1.5rem;
         }
-            .main-menu-header .top-navbar .navbar-icons a{
+            /* .main-menu-header .top-navbar .navbar-icons a{
                 background-color: white;
                 display: flex;
                 align-items: center;
@@ -87,7 +117,13 @@ body {
                 height: 36px;
                 width: 36px;
                 border-radius: 50%;
+                transition: 0.3s ease-in-out;
             }
+                .main-menu-header .top-navbar .navbar-icons a:hover {
+                    scale: 1.4;
+                    background-color: black;
+                    color: white; */
+                /* } */
     .main-menu-header .header-background {
         display: flex;
         justify-content: space-between;
@@ -105,3 +141,225 @@ body {
             .main-menu-header .header-background .header-text .button-theme {
                 background-color: #FF7373;
             }
+            
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    width: 255px;
+}
+    .product-card .img-window {
+        width: 100%;
+        height: 210px;
+        background-color: var(--color-grey-1);
+        position: relative;
+        transition: 0.3s ease-in-out;   
+        overflow: hidden;     
+    }
+
+        .product-card .img-window .icons {
+            position: absolute;
+            right: -40px;
+            top: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: 0.3s ease-in-out;
+        }
+            .product-card .img-window .icons a:hover{
+                scale: 1.1;
+            }
+        .product-card .img-window .button-theme {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #FF7373;
+            opacity: 0%;
+            transition: 0.3s ease-in-out;
+        }
+            .product-card .img-window .button-theme:hover{
+                background-color: black;
+                color: white;
+            }
+            .product-card .img-window:hover {
+                background-color: #CDCED0;
+            }
+            .product-card .img-window:hover .icons {
+                right: 0.6rem;
+            }
+            .product-card .img-window:hover .button-theme {
+                opacity: 100%;
+            }
+        .product-card p {
+            color: #616365;
+        }
+        .product-card .star-rating i{
+            color: #FF7373;
+        }
+        
+
+
+
+/* här börjar jag! */
+
+.card-foppa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 255px;
+    margin: 2rem;
+}
+    .card-foppa .background {
+        width: 100%;
+        height: 210px;
+        background-color: var(--color-grey-1);
+        position: relative;
+        transition: 0.3s ease-in-out;
+        overflow: hidden;
+    }
+        .card-foppa .background .icons {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: -40px;
+            transition: 0.5s ease-in-out;
+            top: 10px;
+            gap: 0.7rem;
+        }
+            .card-foppa .background .icons a:hover {
+                transform: rotatey(180deg);
+            }
+            .card-foppa .background:hover .icons {
+                right: 10px;
+            }
+        .card-foppa .background .button-theme {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #FF7373;
+            color: white;
+            opacity: 0%;
+            transition: 0.3s ease-in-out;
+        }
+        .card-foppa .background .button-theme:hover {
+            background-color: black;
+            color: white;
+        }
+        .card-foppa .background:hover {
+            background-color: #CDCED0;
+        }
+        .card-foppa .background:hover .button-theme {
+            opacity: 100%;
+        }
+    .card-foppa h3 {
+        font-size: 16px;
+    }
+    .card-foppa .stars {
+        color: #FF7373
+        
+    }
+        .card-foppa .stars:hover {
+            transition: 0.3s ease-in-out;
+            scale: 1.2;
+        }
+    .card-foppa p {
+        font-family: var(--font-family-poppins);
+        font-size: 16px;
+        padding-top: 1rem;
+    }
+
+
+         
+            
+
+
+
+
+
+
+
+/* Sebbe */
+
+.card-sebbe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 255px;
+    margin: 2rem;
+}
+    .card-sebbe .card-img {
+        width: 100%;
+        height: 210px;
+        background-color: var(--color-grey-1);
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+    }
+        .card-sebbe .card-img:hover .icons {
+            right: 10px;
+        }
+    
+        .card-sebbe .card-img .icons {
+            position: absolute;
+            right: -40px;
+            top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: 0.3s ease-in-out;
+        }
+            .card-sebbe .card-img .icons:hover {
+                scale: 0.9;
+            }
+
+        .card-sebbe .card-img .button-theme {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #FF7373;
+            opacity: 0%;
+            transition: 0.3s ease-in-out;
+        }
+            .card-sebbe .card-img .button-theme:hover {
+                background-color: black;
+                color: white;
+            }
+            .card-sebbe .card-img:hover {
+                background-color: #CDCED0;
+            }
+            .card-sebbe .sebbe-img:hover .icons {
+                right: 0.6rem;
+            }
+            .card-sebbe .card-img:hover .button-theme {
+                opacity: 100%;
+            }
+
+        .card-sebbe p {
+            font-size: 1rem;
+            color: #616365;
+        }
+
+        .card-sebbe .star-rating {
+            color: #FF7373;
+        }
+
+        .card-sebbe .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+            .card-sebbe .price .old-price {
+                font-size: 1.25rem;
+                text-decoration: line-through;
+                color: #616365;
+            }
+            .card-sebbe .price .new-price {
+                font-size: 1.25rem;
+                text-decoration: solid;
+            }
+
+        
